@@ -347,7 +347,7 @@ for i in range(100):
         
 print(odd_sum / even_cnt)
 print(even_sum / odd_cnt)
-
+#
 #%% 3의 배수들의 합,평균을 구하기 
 
 
