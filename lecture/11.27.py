@@ -102,5 +102,76 @@ predictions = np.array([[0.9, 0.1],
                         [0.3, 0.7]])
 predictions = np.argmax(predictions, axis=1)
 accuracy = np.sum((labels == predictions).astype(np.int))/labels.shape[0]*100
+
+
+
+# %% 함수
+def test_funct(input1, input2):
+    result = input1 + input2
+    return result
+
+def get_mean(input_arr):
+    sum_ = 0
+    for cnt, val in enumerate(input_arr):
+        sum_ += val
+    return sum_ / (cnt+1)
+
+def get_accuracy(labels, predictions):
+    predictions = (predictions >= 0.5).astype(np.int)
+    accuracy = np.sum((labels == predictions).astype(np.int))/labels.shape[0]*100
+    accuracy = np.around(accuracy, 2)
+    return accuracy
+
+# %%
+def test_function(a, b):
+    result = a + b
+    return result
+
+def addition(a, b):
+    return a + b
+
+def subtraction(a, b):
+    return a - b
+
+c = addition(10, 20) + subtraction(10, 20)
+
+# %%
+#input x, output x
+def say_hello():
+    print('Hello World!')
+    
+#input x, output o
+def get_random_number():
+    random_number = np.random.normal(0, 1, size=(1, ))
+    return random_number
+
+#input o, output x
+def say_hello2(name):
+    print('Hello ', name)
+    
+#input o, output o
+def get_mean(score_list):
+    sum_ = 0
+    for cnt, score in enumerate(score_list):
+        sum_ = score
+    return sum_ / (cnt+1)
+
+# %% Namespace
+#global namespace
+a = 10
+#print(locals(), '\n')
+
+def test_function():
+    #local namespace
+    a = 20
+    print(a)
+
+def test_function2():
+    #local namespace
+    a = 30
+    print(a)
+
+test_function()
+test_function2()
 accuracy = np.around(accuracy, 2)
 print(accuracy, '%')
